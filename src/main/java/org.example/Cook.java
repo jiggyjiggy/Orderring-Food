@@ -11,6 +11,11 @@ public class Cook {
         this.price = price;
     }
 
+    public Cook(Menuitem menuitem) {
+        this.name = menuitem.getName();
+        this.price = menuitem.getPrice();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
