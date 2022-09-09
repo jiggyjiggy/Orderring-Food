@@ -10,6 +10,9 @@ public class Menu {
     }
 
     public Menuitem choose(String name) {
-        return new Menuitem("돈까스", 5000);
+        return this.menuitems.stream()
+                .filter(menuitem -> menuitem.matches(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("잘못된 메뉴 이름입니다"));
     }
 }
